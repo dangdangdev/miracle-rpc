@@ -1,5 +1,8 @@
 package com.miraclebay.miracle.rpc.core.annotation;
 
+import com.miraclebay.miracle.rpc.core.spring.CustomScannerRegistrar;
+import org.springframework.context.annotation.Import;
+
 import java.lang.annotation.*;
 
 /**
@@ -7,8 +10,9 @@ import java.lang.annotation.*;
  * @author miraclebay
  */
 @Documented
-@Target({ElementType.FIELD,ElementType.METHOD})
+@Target({ElementType.TYPE,ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
+@Import(CustomScannerRegistrar.class)
 public @interface RpcScan {
 
     String[] basePackage();
