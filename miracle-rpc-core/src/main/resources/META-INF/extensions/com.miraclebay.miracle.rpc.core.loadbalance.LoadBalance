@@ -1,0 +1,1 @@
+loadBalance=com.miraclebay.miracle.rpc.core.loadbalance.loadbalancer.ConsistentHashLoadBalance
