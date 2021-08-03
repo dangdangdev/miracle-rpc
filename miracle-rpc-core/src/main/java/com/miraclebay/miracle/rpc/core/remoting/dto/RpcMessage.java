@@ -20,7 +20,7 @@ public class RpcMessage {
     //compress type
     private byte compress;
     //request id
-    private int requestId;    //request id必须且唯一
+    private int requestId;
     //request data
     private Object data;
 }

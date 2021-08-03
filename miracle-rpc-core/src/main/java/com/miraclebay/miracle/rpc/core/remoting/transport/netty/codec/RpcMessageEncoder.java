@@ -29,7 +29,7 @@ public class RpcMessageEncoder extends MessageToByteEncoder<RpcMessage> {
             out.writeByte(messageType);
             out.writeByte(rpcMessage.getCodec());
             out.writeByte(CompressTypeEnum.GZIP.getCode());
-            out.writeInt(ATOMIC_INTEGER.getAndDecrement());
+            out.writeInt(ATOMIC_INTEGER.getAndIncrement());
 
             byte[] bodyBytes = null;
             int fullLength = RpcConstants.HEAD_LENGTH;

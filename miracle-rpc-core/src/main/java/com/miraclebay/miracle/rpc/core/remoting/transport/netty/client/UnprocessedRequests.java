@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Slf4j
 public class UnprocessedRequests {
-    public static final Map<String, CompletableFuture<RpcResponse<Object>> UNPROCESSED_RESPONSE_FUTURES = new ConcurrentHashMap<>();
+    public static final Map<String, CompletableFuture<RpcResponse<Object>>> UNPROCESSED_RESPONSE_FUTURES = new ConcurrentHashMap<>();
 
     public void put(String requestId, CompletableFuture<RpcResponse<Object>> future){
         UNPROCESSED_RESPONSE_FUTURES.put(requestId, future);

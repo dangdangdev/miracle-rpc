@@ -39,6 +39,7 @@ public final class ExtensionLoader<T> {
             throw new IllegalArgumentException("Extension type must be an interface.");
         }
         if (type.getAnnotation(SPI.class) == null) {
+            System.out.println(type.getTypeName());
             throw new IllegalArgumentException("Extension type must be annotated by @SPI");
         }
         // firstly get from cache, if not hit, create one

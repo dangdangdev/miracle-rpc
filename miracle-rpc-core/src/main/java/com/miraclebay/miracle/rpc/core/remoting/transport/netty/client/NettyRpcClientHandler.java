@@ -38,7 +38,7 @@ public class NettyRpcClientHandler extends ChannelInboundHandlerAdapter {
                 byte messageType = tmp.getMessageType();
                 if (messageType == RpcConstants.HEARTBEAT_RESPONSE_TYPE) {
                     log.info("heart [{}]", tmp.getData());
-                }else if (messageType == RpcConstants.REQUEST_TYPE){
+                }else if (messageType == RpcConstants.RESPONSE_TYPE){
                     RpcResponse<Object> rpcResponse = (RpcResponse<Object>) tmp.getData();
                     unprocessedRequests.complete(rpcResponse);
                 }

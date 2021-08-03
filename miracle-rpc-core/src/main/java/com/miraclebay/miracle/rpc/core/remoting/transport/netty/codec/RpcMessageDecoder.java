@@ -60,6 +60,10 @@ public class RpcMessageDecoder extends LengthFieldBasedFrameDecoder {
 
         //心跳检测
         if (messageType == RpcConstants.HEARTBEAT_REQUEST_TYPE){
+            rpcMessage.setData(RpcConstants.PING);
+            return rpcMessage;
+        }
+        if (messageType == RpcConstants.HEARTBEAT_RESPONSE_TYPE){
             rpcMessage.setData(RpcConstants.PONG);
             return rpcMessage;
         }
